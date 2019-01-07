@@ -32,20 +32,20 @@ void setup() {
 }
 
 void loop() {
-  while(!timeClient.update()) {
+  /*while(!timeClient.update()) {
     int c;
     for(int c = 0 ; c < 5; c++){
       timeClient.forceUpdate();
       Serial.println("forcing update");}
     break;
-  }
+  }*/
   /*formattedDate = timeClient.getFormattedDate();
   int splitT = formattedDate.indexOf("T");
   timeStamp = formattedDate.substring(splitT+1, formattedDate.length()-1);
   */
   long timeStamp = timeClient.getEpochTime();
   Serial.println(timeStamp);
-  Serial.println(eth_data("sensor","12213123","12:39"));
+  Serial.println(eth_data("sensor","12213123",String(timeStamp)));
   delay(1000);
 
 }
