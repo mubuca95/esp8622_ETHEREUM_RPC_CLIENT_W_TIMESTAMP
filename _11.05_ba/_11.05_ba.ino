@@ -34,7 +34,7 @@ void setSchalterAus_func(){
 void setup() {
   digitalWrite(optokuplor1,LOW);
   Serial.begin(9600);
-  WiFi.begin("tp-link", "12121212");
+  WiFi.begin("ssid", "password");
   while(WiFi.status() != WL_CONNECTED) {  
     delay(500);
     Serial.println("Waiting for connection");
